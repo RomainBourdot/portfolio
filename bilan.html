@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>06 · Bilan et suite — Carnet de toits</title>
-<meta name="description" content="Bilan de mon stage : ce que j'ai appris, la difficulté qui m'a le plus formé, et la suite du stage en quatre missions.">
+<meta name="description" content="Bilan de mon stage : ce que j'ai appris, la difficulté qui m'a le plus formé, et la suite du stage en deux missions.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 26'%3E%3Crect width='26' height='26' fill='%23C4572E'/%3E%3Crect x='6' y='6' width='7' height='7' fill='%23E7A83B'/%3E%3Crect x='14' y='14' width='7' height='7' fill='%23FAF7F0'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="fonts/fonts.css">
 <link rel="stylesheet" href="style.css">
@@ -58,11 +58,23 @@
         <span class="badge fait">FAIT ✓</span>
         <p class="bloc-title">La v1, livrée et vérifiée</p>
         <ul>
-          <li>Import du fichier Excel existant, avec rapport chiffré</li>
-          <li>Calcul des km par itinéraire réel (OpenRouteService), cache et repli manuel</li>
-          <li>Saisie, modification et suppression des déplacements et des employés</li>
-          <li>Historique filtrable par employé et période, totaux ajustés</li>
-          <li>14 fonctionnalités revérifiées une à une en conditions réelles</li>
+          <li>Import du fichier Excel existant : rendez-vous annulés, doublons et
+          totaux de pied de fichier écartés, rapport chiffré à chaque import</li>
+          <li>Calcul des km par itinéraire routier réel (OpenRouteService),
+          géocodage borné à la France avec priorité à la région</li>
+          <li>Cache des adresses pour économiser l'API, saisie manuelle en repli</li>
+          <li>Gestion des employés : création, modification, activation et
+          désactivation</li>
+          <li>Saisie des déplacements avec estimation des km à la volée,
+          modification, suppression avec confirmation</li>
+          <li>Historique filtrable par employé et période, totaux ajustés au
+          filtre, tableau de bord</li>
+          <li>Interface aux couleurs de l'entreprise (charte orange et noir
+          validée par le client)</li>
+          <li>Specs complètes (brief, architecture, sécurité, design) et
+          14 fonctionnalités revérifiées une à une en conditions réelles</li>
+          <li>Application conteneurisable (Dockerfile) et données dans un fichier
+          unique, simple à sauvegarder</li>
         </ul>
       </div>
       <div class="bloc-prevu">
@@ -70,13 +82,13 @@
         <p class="bloc-title">La suite du stage, déjà cadrée</p>
         <ul>
           <li>Mon stage se poursuit au-delà de ce blog : la suite est cadrée en
-          quatre missions, détaillées ci-dessous. C'est mon programme de travail
+          deux missions, détaillées ci-dessous. C'est mon programme de travail
           pour les semaines qui viennent.</li>
         </ul>
       </div>
     </div>
 
-    <h2>La suite du stage, en quatre missions</h2>
+    <h2>La suite du stage, en deux missions</h2>
     <div class="missions">
       <div class="bloc-prevu">
         <span class="badge mission">M1</span>
@@ -94,22 +106,6 @@
         exploitables : tout ce qui est nécessaire avant d'ouvrir l'outil à plusieurs
         personnes.</p>
       </div>
-      <div class="bloc-prevu">
-        <span class="badge mission">M3</span>
-        <p class="bloc-title">Piloter les coûts des chantiers</p>
-        <p>Rattacher les déplacements aux chantiers, calculer les indemnités
-        kilométriques au barème URSSAF (avec historique des barèmes), agréger les
-        postes de coût et restituer l'écart entre devis et réalisé, avec exports
-        Excel et PDF.</p>
-      </div>
-      <div class="bloc-prevu">
-        <span class="badge mission">M4</span>
-        <p class="bloc-title">Mettre en exploitation</p>
-        <p>Packager l'application pour un utilisateur non technique, reprendre
-        l'historique des années précédentes avec contrôle des totaux, traiter le
-        volet RGPD (conservation, purge, export), documenter et conduire la recette
-        avec l'utilisateur final.</p>
-      </div>
     </div>
 
     <h2>Ce que ce stage change pour la suite</h2>
@@ -117,7 +113,7 @@
     un besoin réel, pour des gens qui s'en servent vraiment. Il m'a aussi montré ce
     qui me manque encore : les tests automatisés, le déploiement, tout ce qui
     transforme un prototype qui marche en logiciel qui dure. C'est exactement le
-    programme des quatre missions ci-dessus, et c'est la direction que je veux
+    programme des deux missions ci-dessus, et c'est la direction que je veux
     prendre en troisième année : apprendre à industrialiser, pas seulement à faire
     marcher.</p>
   </article>
