@@ -1,0 +1,2 @@
+Polices embarquees : Silkscreen, Public Sans, JetBrains Mono.
+Distribuees sous licence SIL Open Font License 1.1 (https://scripts.sil.org/OFL).
