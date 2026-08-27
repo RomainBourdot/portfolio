@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>06 · Bilan et suite — Carnet de toits</title>
+<meta name="description" content="Bilan de mon stage : ce que j'ai appris, la difficulté qui m'a le plus formé, et la feuille de route en quatre missions pour la suite du projet.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 26'%3E%3Crect width='26' height='26' fill='%23C4572E'/%3E%3Crect x='6' y='6' width='7' height='7' fill='%23E7A83B'/%3E%3Crect x='14' y='14' width='7' height='7' fill='%23FAF7F0'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <a class="brand" href="index.html"><span class="logo"></span>Carnet de toits</a>
+    <span class="meta"><a href="index.html">←</a> Article 06 · Bilan et suite</span>
+  </div>
+</header>
+<div class="roofline"></div>
+
+<main>
+  <article class="post">
+    <span class="badge">06</span>
+    <h1>Bilan et suite</h1>
+    <p class="lead">Le moment le plus formateur du stage n'a pas été une réussite,
+    mais un écart.</p>
+
+    <h2>La difficulté qui m'a le plus appris</h2>
+    <p>Pendant tout le développement, j'ai validé mes calculs sur un échantillon de
+    données que j'avais reconstitué. Tout était vert. Puis est venue la confrontation
+    avec le fichier réel du bureau, et là, surprise : son total annuel est doublé en
+    pied de fichier, marqué « ALLER/RETOUR ». Le gestionnaire compte ses frais en
+    aller-retour ; mon outil sommait des allers simples. Mes chiffres étaient justes
+    et pourtant inutilisables : du simple au double.</p>
+    <p>La leçon est claire : j'avais testé sur des données trop propres, au lieu de
+    partir des habitudes réelles de l'utilisateur. Ce jour-là, j'ai compris qu'un
+    logiciel n'est pas juste parce que son code est juste ; il est juste quand il
+    colle à la façon dont les gens travaillent. La correction (marquer un déplacement
+    aller-retour et l'inclure aux totaux) est identifiée, spécifiée, et en tête de la
+    feuille de route ci-dessous.</p>
+    <p>Côté forces, ce stage m'a confirmé de la rigueur (chaque fonctionnalité a été
+    vérifiée une à une, preuves à l'appui) et une vraie capacité à travailler en
+    autonomie. Côté faiblesse, cette tendance à valider sur des données idéales :
+    maintenant, je confronte l'outil au réel le plus tôt possible.</p>
+
+    <h2>Où en est le projet</h2>
+    <div class="fp-grid">
+      <div class="bloc-fait">
+        <span class="badge fait">FAIT ✓</span>
+        <p class="bloc-title">La v1, livrée et vérifiée</p>
+        <ul>
+          <li>Import du fichier Excel existant, avec rapport chiffré</li>
+          <li>Calcul des km par itinéraire réel (OpenRouteService), cache et repli manuel</li>
+          <li>Saisie, modification et suppression des déplacements et des employés</li>
+          <li>Historique filtrable par employé et période, totaux ajustés</li>
+          <li>14 fonctionnalités revérifiées une à une en conditions réelles</li>
+        </ul>
+      </div>
+      <div class="bloc-prevu">
+        <span class="badge prevu">PRÉVU</span>
+        <p class="bloc-title">La feuille de route que j'ai construite</p>
+        <ul>
+          <li>À la fin du stage, j'ai cadré la suite du projet en quatre missions,
+          détaillées ci-dessous : c'est mon plan de travail si l'aventure continue.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>La feuille de route, en quatre missions</h2>
+    <div class="missions">
+      <div class="bloc-prevu">
+        <span class="badge mission">M1</span>
+        <p class="bloc-title">Fiabiliser et industrialiser</p>
+        <p>Écrire les tests du cœur métier (import, calculs, CRUD), passer à des
+        migrations de schéma versionnées (Alembic), éprouver réellement la bascule
+        SQLite → MySQL, monter une chaîne d'intégration continue, et tester la
+        procédure de sauvegarde et de restauration.</p>
+      </div>
+      <div class="bloc-prevu">
+        <span class="badge mission">M2</span>
+        <p class="bloc-title">Passer au multi-utilisateur</p>
+        <p>Authentification et sessions, rôles employé et gestionnaire, publication
+        derrière un reverse proxy avec TLS, conteneurisation propre et journaux
+        exploitables : tout ce qui est nécessaire avant d'ouvrir l'outil à plusieurs
+        personnes.</p>
+      </div>
+      <div class="bloc-prevu">
+        <span class="badge mission">M3</span>
+        <p class="bloc-title">Piloter les coûts des chantiers</p>
+        <p>Rattacher les déplacements aux chantiers, calculer les indemnités
+        kilométriques au barème URSSAF (avec historique des barèmes), agréger les
+        postes de coût et restituer l'écart entre devis et réalisé, avec exports
+        Excel et PDF.</p>
+      </div>
+      <div class="bloc-prevu">
+        <span class="badge mission">M4</span>
+        <p class="bloc-title">Mettre en exploitation</p>
+        <p>Packager l'application pour un utilisateur non technique, reprendre
+        l'historique des années précédentes avec contrôle des totaux, traiter le
+        volet RGPD (conservation, purge, export), documenter et conduire la recette
+        avec l'utilisateur final.</p>
+      </div>
+    </div>
+
+    <h2>Ce que ce stage change pour la suite</h2>
+    <p>Ce stage m'a confirmé ce qui me plaît : développer des outils qui répondent à
+    un besoin réel, pour des gens qui s'en servent vraiment. Il m'a aussi montré ce
+    qui me manque encore : les tests automatisés, le déploiement, tout ce qui
+    transforme un prototype qui marche en logiciel qui dure. C'est exactement le
+    programme de la feuille de route ci-dessus, et c'est la direction que je veux
+    prendre en troisième année : apprendre à industrialiser, pas seulement à faire
+    marcher.</p>
+  </article>
+
+  <nav class="post-nav" aria-label="Article précédent et suivant">
+    <a class="prev" href="quotidien.html">
+      <div class="label">← PRÉCÉDENT</div>
+      <div class="title">05 · Le quotidien</div>
+    </a>
+    <span class="spacer"></span>
+  </nav>
+</main>
+
+<footer class="site-footer">
+  <div class="inner">
+    <div><span class="name">Carnet de toits</span> — Romain · Bachelor 2 Informatique, Ynov Aix</div>
+    <div>Stage été 2026 · La Compagnie des Toits</div>
+  </div>
+</footer>
+
+</body>
+</html>

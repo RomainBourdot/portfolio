@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>03 · Ma mission — Carnet de toits</title>
+<meta name="description" content="Ma mission de stage : moderniser le suivi des déplacements des employés de La Compagnie des Toits, tenu jusque-là dans un fichier Excel.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 26'%3E%3Crect width='26' height='26' fill='%23C4572E'/%3E%3Crect x='6' y='6' width='7' height='7' fill='%23E7A83B'/%3E%3Crect x='14' y='14' width='7' height='7' fill='%23FAF7F0'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <a class="brand" href="index.html"><span class="logo"></span>Carnet de toits</a>
+    <span class="meta"><a href="index.html">←</a> Article 03 · Ma mission</span>
+  </div>
+</header>
+<div class="roofline"></div>
+
+<main>
+  <article class="post">
+    <span class="badge">03</span>
+    <h1>Ma mission</h1>
+    <p class="lead">Au départ, un fichier Excel tenu à la main. À l'arrivée, un outil
+    web qui calcule les kilomètres tout seul.</p>
+
+    <h2>Le point de départ</h2>
+    <p>Les déplacements professionnels des employés étaient suivis dans un fichier
+    Excel : une ligne par trajet, avec l'objet du déplacement, la date, le lieu et
+    les kilomètres. Les kilomètres étaient estimés et saisis à la main, et les totaux
+    calculés en pied de fichier.</p>
+
+    <div class="tech">
+      <div class="t-title">// le fichier de départ, une ligne par trajet</div>
+      <div>Objet | Début | Emplacement | km</div>
+      <div class="t-note">→ km saisis à la main, totaux recalculés en pied de fichier</div>
+    </div>
+
+    <p>Ce système marche, mais il coûte du temps et invite les erreurs : une adresse
+    mal estimée, une ligne oubliée, un total qui ne colle plus. Et surtout, personne
+    ne peut répondre vite à une question simple du type « combien de kilomètres pour
+    cet employé sur ce mois ? ».</p>
+
+    <h2>Ce qu'on m'a confié</h2>
+    <p>Ma mission : remplacer ce suivi manuel par un outil web utilisé au bureau par
+    le gestionnaire. Le besoin tenait en quatre points :</p>
+    <ul>
+      <li><strong>importer</strong> le fichier Excel existant, pour ne pas perdre l'historique ;</li>
+      <li><strong>calculer les kilomètres automatiquement</strong> à partir des adresses,
+      par itinéraire routier réel, pas à vol d'oiseau ;</li>
+      <li><strong>saisir</strong> les nouveaux déplacements au fil de l'eau ;</li>
+      <li><strong>consulter l'historique</strong>, filtrable par employé et par période,
+      avec les totaux de kilomètres.</li>
+    </ul>
+
+    <h2>Le cadrage</h2>
+    <p>Avant de coder, on a cadré le projet avec le gérant, et ces décisions ont tout
+    simplifié : un seul utilisateur (le gestionnaire, sur le poste du bureau), pas de
+    mise en ligne à ce stade donc pas de comptes ni de mots de passe (documenté comme
+    évolution pour le jour d'une éventuelle publication), un budget de 0 € en
+    s'appuyant sur des services gratuits, et le minimum de données personnelles :
+    juste ce qu'il faut pour suivre les trajets, rien qui sorte de l'entreprise.</p>
+    <p>Je présentais l'avancement en réunion régulièrement : c'est là que le besoin
+    s'est précisé et que certaines de mes idées ont été recadrées par la réalité du
+    terrain. L'article suivant raconte ce que j'ai construit.</p>
+  </article>
+
+  <nav class="post-nav" aria-label="Article précédent et suivant">
+    <a class="prev" href="entreprise.html">
+      <div class="label">← PRÉCÉDENT</div>
+      <div class="title">02 · L'entreprise</div>
+    </a>
+    <a class="next" href="projet.html">
+      <div class="label">SUIVANT →</div>
+      <div class="title">04 · Le projet livré</div>
+    </a>
+  </nav>
+</main>
+
+<footer class="site-footer">
+  <div class="inner">
+    <div><span class="name">Carnet de toits</span> — Romain · Bachelor 2 Informatique, Ynov Aix</div>
+    <div>Stage été 2026 · La Compagnie des Toits</div>
+  </div>
+</footer>
+
+</body>
+</html>

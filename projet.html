@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>04 · Le projet livré — Carnet de toits</title>
+<meta name="description" content="L'application que j'ai développée pendant le stage : Python/FastAPI, import de l'Excel existant, calcul automatique des kilomètres via OpenRouteService.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 26'%3E%3Crect width='26' height='26' fill='%23C4572E'/%3E%3Crect x='6' y='6' width='7' height='7' fill='%23E7A83B'/%3E%3Crect x='14' y='14' width='7' height='7' fill='%23FAF7F0'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <a class="brand" href="index.html"><span class="logo"></span>Carnet de toits</a>
+    <span class="meta"><a href="index.html">←</a> Article 04 · Le projet livré</span>
+  </div>
+</header>
+<div class="roofline"></div>
+
+<main>
+  <article class="post">
+    <span class="badge">04</span>
+    <h1>Le projet livré</h1>
+    <p class="lead">Une application web locale en Python, environ 600 lignes, 14
+    fonctionnalités vérifiées une à une. Le code est public sur
+    <a href="https://github.com/RomainBourdot/deplacements-cdt">mon GitHub</a>.</p>
+
+    <h2>Les choix techniques</h2>
+    <p>J'ai choisi <strong>FastAPI</strong> (Python) avec des pages servies par le
+    serveur (Jinja2 et HTMX), une base <strong>SQLite</strong> dans un simple fichier,
+    et l'API <strong>OpenRouteService</strong> pour transformer deux adresses en
+    kilomètres par itinéraire routier réel. Avant de coder, j'ai regardé ce qui
+    existait :</p>
+    <ul>
+      <li>des outils open source comme <strong>LubeLogger</strong> ou
+      <strong>ExpenseOwl</strong> suivent des véhicules ou des dépenses, mais aucun
+      n'importait notre fichier existant ni ne calculait les kilomètres par
+      itinéraire : le besoin justifiait un outil sur mesure ;</li>
+      <li>pour le calcul d'itinéraire, héberger soi-même un moteur comme
+      <strong>GraphHopper</strong> ou <strong>Valhalla</strong> aurait été
+      surdimensionné pour un poste unique et quelques requêtes par jour : l'API
+      hébergée d'OpenRouteService, gratuite à ce volume, suffisait.</li>
+    </ul>
+    <p>Même logique pour la sécurité : l'outil tourne en local sur le poste du
+    bureau, sans exposition réseau, donc sans système de comptes. Ce choix est
+    documenté, avec ses conditions : le jour où l'application serait mise en ligne,
+    l'authentification devient obligatoire.</p>
+
+    <h2>L'import du fichier réel</h2>
+    <p>La partie la plus délicate n'était pas la plus visible : lire correctement le
+    fichier Excel existant. Il fallait ignorer les rendez-vous annulés, écarter les
+    totaux de pied de fichier, détecter les doublons, et lire des dates au format
+    américain. Chaque import affiche un rapport chiffré pour que le gestionnaire
+    voie ce qui est entré et ce qui a été écarté.</p>
+
+    <div class="tech">
+      <div class="t-title">// rapport d'import, sur l'échantillon de test</div>
+      <div>13 lignes lues → 9 déplacements importés</div>
+      <div class="t-note">→ annulés, totaux et doublons écartés automatiquement</div>
+    </div>
+
+    <h2>Le calcul des kilomètres</h2>
+    <p>À la saisie, le gestionnaire entre deux adresses et l'application propose la
+    distance par la route. Le géocodage est borné à la France avec une priorité à la
+    région, pour éviter qu'une « rue de la République » parte à l'autre bout du pays.
+    Les adresses déjà résolues sont mises en cache, ce qui économise les appels à
+    l'API. Si une adresse reste introuvable, la saisie manuelle prend le relais.</p>
+
+    <div class="tech">
+      <div class="t-title">// exemple de calcul</div>
+      <div>Aix-en-Provence → Marseille</div>
+      <div class="t-note">→ 30,5 km par itinéraire routier (OpenRouteService)</div>
+    </div>
+
+    <h2>La méthode</h2>
+    <p>J'ai travaillé comme sur un vrai projet : un brief validé, des documents de
+    spécification (architecture, sécurité, design), un plan découpé en étapes, et
+    une revue finale où chacune des 14 fonctionnalités a été revérifiée en conditions
+    réelles, requêtes et base de données à l'appui. Tous ces documents sont dans le
+    dépôt du projet, à côté du code.</p>
+  </article>
+
+  <nav class="post-nav" aria-label="Article précédent et suivant">
+    <a class="prev" href="mission.html">
+      <div class="label">← PRÉCÉDENT</div>
+      <div class="title">03 · Ma mission</div>
+    </a>
+    <a class="next" href="quotidien.html">
+      <div class="label">SUIVANT →</div>
+      <div class="title">05 · Le quotidien</div>
+    </a>
+  </nav>
+</main>
+
+<footer class="site-footer">
+  <div class="inner">
+    <div><span class="name">Carnet de toits</span> — Romain · Bachelor 2 Informatique, Ynov Aix</div>
+    <div>Stage été 2026 · La Compagnie des Toits</div>
+  </div>
+</footer>
+
+</body>
+</html>

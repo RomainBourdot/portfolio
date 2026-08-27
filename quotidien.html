@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>05 · Le quotidien — Carnet de toits</title>
+<meta name="description" content="Le quotidien de mon stage chez La Compagnie des Toits : travail au bureau, autonomie sur la mission, réunions d'avancement.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 26'%3E%3Crect width='26' height='26' fill='%23C4572E'/%3E%3Crect x='6' y='6' width='7' height='7' fill='%23E7A83B'/%3E%3Crect x='14' y='14' width='7' height='7' fill='%23FAF7F0'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <a class="brand" href="index.html"><span class="logo"></span>Carnet de toits</a>
+    <span class="meta"><a href="index.html">←</a> Article 05 · Le quotidien</span>
+  </div>
+</header>
+<div class="roofline"></div>
+
+<main>
+  <article class="post">
+    <span class="badge">05</span>
+    <h1>Le quotidien</h1>
+    <p class="lead">Seul développeur de l'entreprise, mais pas seul dans l'entreprise :
+    comment se sont organisés mes 25 jours.</p>
+
+    <h2>L'autonomie, pour de vrai</h2>
+    <p>J'étais le seul à travailler sur cette mission : personne pour me donner la
+    prochaine tâche, personne pour relire mon code. L'autonomie n'était pas un mot de
+    CV, c'était la condition de base. Pour ne pas me perdre, je me suis imposé une
+    organisation : découper le travail en étapes, écrire ce que je décidais (le brief,
+    les spécifications, une liste de fonctionnalités avec leur statut), et vérifier
+    chaque étape avant de passer à la suivante. Cette trace écrite m'a sauvé plusieurs
+    fois : quand on hésite, on relit ce qu'on avait décidé et pourquoi.</p>
+
+    <h2>Les réunions d'avancement</h2>
+    <p>Régulièrement, je présentais l'avancement en petite réunion : montrer les
+    écrans, faire tourner un import, expliquer ce qui restait à faire. Ces points
+    avaient deux vertus. D'abord, ils m'obligeaient à avoir toujours quelque chose de
+    montrable, pas seulement du code en chantier. Ensuite, ils confrontaient mes choix
+    à la réalité du métier : c'est en réunion que j'ai compris certaines habitudes du
+    bureau que je n'aurais jamais devinées depuis mon écran, à commencer par la façon
+    de compter les kilomètres (j'y reviens dans le bilan).</p>
+
+    <h2>Parler technique à des non-informaticiens</h2>
+    <p>Personne dans l'entreprise ne parle « API » ou « base de données ». Expliquer
+    mon travail m'a demandé de traduire : « l'application demande sa route à un
+    service de cartographie, comme un GPS » passe mieux qu'un exposé sur le
+    géocodage. Cet exercice de vulgarisation est une compétence que je ne pensais
+    pas travailler en stage d'informatique, et c'est peut-être celle qui m'a le plus
+    servi.</p>
+
+    <h2>La curiosité au travail</h2>
+    <p>Deux exemples concrets. Le cache de géocodage : en voyant les mêmes adresses
+    revenir, j'ai cherché comment éviter de redemander la même chose à l'API, et la
+    mise en cache a réglé la question. Le format des dates : en inspectant le fichier
+    Excel de près, j'ai découvert des dates au format américain, un piège silencieux
+    qui aurait inversé des jours et des mois. Dans les deux cas, c'est la curiosité,
+    aller voir dans le détail sans qu'on me le demande, qui a fait la différence.</p>
+  </article>
+
+  <nav class="post-nav" aria-label="Article précédent et suivant">
+    <a class="prev" href="projet.html">
+      <div class="label">← PRÉCÉDENT</div>
+      <div class="title">04 · Le projet livré</div>
+    </a>
+    <a class="next" href="bilan.html">
+      <div class="label">SUIVANT →</div>
+      <div class="title">06 · Bilan et suite</div>
+    </a>
+  </nav>
+</main>
+
+<footer class="site-footer">
+  <div class="inner">
+    <div><span class="name">Carnet de toits</span> — Romain · Bachelor 2 Informatique, Ynov Aix</div>
+    <div>Stage été 2026 · La Compagnie des Toits</div>
+  </div>
+</footer>
+
+</body>
+</html>
