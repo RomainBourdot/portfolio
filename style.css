@@ -278,14 +278,15 @@ li { margin-bottom: 6px; }
 
 .bloc-fait ul, .bloc-prevu ul { margin: 0; font-size: 14px; line-height: 1.7; }
 
-/* feuille de route : cartes missions (tout est « prévu ») */
-.missions {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+/* colonne droite du bloc fait/prévu : missions empilées, hauteurs égales */
+.fp-right {
+  display: flex;
+  flex-direction: column;
   gap: 16px;
-  margin: 20px 0;
 }
-.missions .bloc-prevu p { font-size: 14px; margin: 0; }
+.fp-right .bloc-prevu { flex: 1; }
+.fp-right .bloc-prevu p:last-child { font-size: 14px; margin-bottom: 0; }
+.bloc-prevu .badge + .badge { margin-left: 6px; }
 
 /* ---------- navigation précédent / suivant ---------- */
 
