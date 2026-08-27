@@ -3,6 +3,3 @@ Bachelor 2 Informatique, Ynov Aix-en-Provence — stage été 2026 chez La Compa
 
 Pour lire le blog : extraire ce dossier, puis ouvrir index.html dans un navigateur
 (double-clic). Aucune connexion internet nécessaire.
-
-Le code du projet réalisé pendant le stage :
-https://github.com/RomainBourdot/deplacements-cdt
