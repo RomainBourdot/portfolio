@@ -60,41 +60,44 @@
         <span class="badge fait">FAIT ✓</span>
         <p class="bloc-title">La v1, livrée et vérifiée</p>
         <ul>
-          <li>Import du fichier Excel existant : rendez-vous annulés, doublons et
-          totaux de pied de fichier écartés, rapport chiffré à chaque import</li>
+          <li>Import du fichier Excel existant : annulés, doublons et totaux
+          écartés, rapport chiffré à chaque import</li>
           <li>Calcul des km par itinéraire routier réel (OpenRouteService),
-          géocodage borné à la France avec priorité à la région</li>
+          géocodage borné à la France, priorité à la région</li>
           <li>Cache des adresses pour économiser l'API, saisie manuelle en repli</li>
-          <li>Gestion des employés : création, modification, activation et
-          désactivation</li>
-          <li>Saisie des déplacements avec estimation des km à la volée,
-          modification, suppression avec confirmation</li>
+          <li>Gestion des employés et des déplacements : création, modification,
+          estimation des km à la volée, suppression avec confirmation</li>
           <li>Historique filtrable par employé et période, totaux ajustés au
           filtre, tableau de bord</li>
           <li>Interface aux couleurs de l'entreprise (charte orange et noir
           validée par le client)</li>
-          <li>Specs complètes (brief, architecture, sécurité, design) et
-          14 fonctionnalités revérifiées une à une en conditions réelles</li>
-          <li>Application conteneurisable (Dockerfile) et données dans un fichier
-          unique, simple à sauvegarder</li>
+          <li>Specs complètes (brief, architecture, sécurité, design),
+          14 fonctionnalités revérifiées une à une, Dockerfile, données dans un
+          fichier unique simple à sauvegarder</li>
         </ul>
       </div>
       <div class="fp-right">
         <div class="bloc-prevu">
-          <span class="badge mission">M1</span> <span class="badge prevu">EN COURS</span>
+          <div class="badges"><span class="badge mission">M1</span> <span class="badge prevu">EN COURS</span></div>
           <p class="bloc-title">Fiabiliser et industrialiser</p>
           <p>Écrire les tests du cœur métier (import, calculs, CRUD), passer à des
-          migrations de schéma versionnées (Alembic), éprouver réellement la bascule
-          SQLite → MySQL, monter une chaîne d'intégration continue, et tester la
-          procédure de sauvegarde et de restauration.</p>
+          migrations de schéma versionnées, éprouver réellement la bascule vers
+          MySQL, monter une chaîne d'intégration continue, et tester la procédure
+          de sauvegarde et de restauration.</p>
+          <ul class="chips">
+            <li>pytest</li><li>Alembic</li><li>MySQL</li><li>CI</li><li>sauvegardes</li>
+          </ul>
         </div>
         <div class="bloc-prevu">
-          <span class="badge mission">M2</span> <span class="badge prevu">EN COURS</span>
+          <div class="badges"><span class="badge mission">M2</span> <span class="badge prevu">EN COURS</span></div>
           <p class="bloc-title">Passer au multi-utilisateur</p>
           <p>Authentification et sessions, rôles employé et gestionnaire, publication
           derrière un reverse proxy avec TLS, conteneurisation propre et journaux
           exploitables : tout ce qui est nécessaire avant d'ouvrir l'outil à plusieurs
           personnes.</p>
+          <ul class="chips">
+            <li>auth</li><li>rôles</li><li>TLS</li><li>Docker</li><li>logs</li>
+          </ul>
         </div>
       </div>
     </div>

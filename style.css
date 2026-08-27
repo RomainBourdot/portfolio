@@ -284,9 +284,29 @@ li { margin-bottom: 6px; }
   flex-direction: column;
   gap: 16px;
 }
-.fp-right .bloc-prevu { flex: 1; }
-.fp-right .bloc-prevu p:last-child { font-size: 14px; margin-bottom: 0; }
-.bloc-prevu .badge + .badge { margin-left: 6px; }
+.fp-right .bloc-prevu { flex: 1; display: flex; flex-direction: column; }
+.fp-right .bloc-prevu > p:not(.bloc-title) { font-size: 14px; }
+.fp-right .chips { margin-top: auto; padding-top: 10px; }
+.badges { margin-bottom: 10px; }
+.badges .badge + .badge { margin-left: 6px; }
+
+/* étiquettes de technos (pointillé bleu = en cours) */
+.chips {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+.chips li {
+  border: 1px dashed var(--blue);
+  color: var(--blue);
+  padding: 2px 8px;
+  margin: 0;
+}
 
 /* ---------- navigation précédent / suivant ---------- */
 
